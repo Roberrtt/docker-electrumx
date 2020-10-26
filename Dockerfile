@@ -1,9 +1,5 @@
 FROM python:3.7-alpine3.11
 
-RUN git clone https://github.com/dashpay/x11-hash-js.git && \
-    cd x11_hash-1.4 $$ \
-    pip3 install x11_hash
-
 COPY ./bin /usr/local/bin
 COPY ./VERSION /tmp
 
