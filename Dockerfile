@@ -4,6 +4,8 @@ LABEL maintainer="Luke Childs <lukechilds123@gmail.com>"
 COPY ./bin /usr/local/bin
 COPY ./VERSION /tmp
 
+RUN pip install x11_hash
+
 RUN VERSION=$(cat /tmp/VERSION) && \
     chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
