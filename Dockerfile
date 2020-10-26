@@ -15,7 +15,12 @@ RUN VERSION=$(cat /tmp/VERSION) && \
     python setup.py install && \
     apk del git build-base && \
     rm -rf /tmp/*
+    
+RUN git clone https://github.com/dashpay/x11-hash-js.git && \
+    cd x11_hash-1.4 $$ \
+    pip3 install x11_hash
 
+    
 VOLUME ["/data"]
 ENV HOME /data
 ENV ALLOW_ROOT 1
