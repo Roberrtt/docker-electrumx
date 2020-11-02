@@ -10,8 +10,8 @@ RUN VERSION=$(cat /tmp/VERSION) && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
     pip install aiohttp pylru plyvel websockets python-rocksdb && \
     pip install x11_hash && \
-    git clone -b $VERSION https://github.com/Roberrtt/electrumx.git && \
-    cd electrumx && \
+    git clone -b $VERSION https://github.com/Roberrtt/qtum-electrumx-server.git && \
+    cd qtum-electrumx-server && \
     python setup.py install && \
     apk del git build-base && \
     rm -rf /tmp/*
